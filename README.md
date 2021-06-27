@@ -1,4 +1,4 @@
-# payroll_management_system
+# HR_Employee File Management System
 A Employee file management site to take care of employee's salaries, deductions, bonuses and leave management.
 ## Installation Steps:
 * Create a virtual Environment
