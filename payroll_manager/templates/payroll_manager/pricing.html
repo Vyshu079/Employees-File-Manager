@@ -1,0 +1,68 @@
+{% extends 'payroll_manager/base.html' %}
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Pricing</h2>
+                <ol>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li>Pricing</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-md-0" style="margin-left: 30%;">
+                    <div class="box featured">
+                        <h3>Business</h3>
+                        <h4><sup>₹</sup>1,50,000<span> / year</span></h4>
+                        <ul>
+                            <li>Rent the software as a whole.</li>
+                            <li>Get maintanance support.</li>
+                            <li>Can pay in installments.</li>
+                            <li class="na">To add customised features go for the Developer Version.</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="box">
+                        <h3>Developer</h3>
+                        <h4><sup>₹</sup>2,00,000<span> / year</span></h4>
+                        <ul>
+                            <li>Rent the software as a whole.</li>
+                            <li>Get maintanance support.</li>
+                            <li>Can pay in installments.</li>
+                            <li>Get customized Features!</li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="#" class="btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Pricing Section -->
+
+</main>
+<!-- End #main -->
+
+{% endblock %}

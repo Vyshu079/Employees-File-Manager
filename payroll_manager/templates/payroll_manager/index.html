@@ -1,0 +1,79 @@
+{% extends 'payroll_manager/base.html' %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div{% if message.tags %} {% endif %} class="alert alert-danger">{{ message }}</div>
+  {% endfor %}
+  {% endif %}
+  <!-- ======= Hero Section ======= -->
+
+  <section id="hero">
+    <!-- <div id="sticky">
+      <img src="https://krvin8.github.io/TalkM/img/talkm-products-chatbot.png" onclick="myFunction()" id="chat-icon">
+    </div> -->
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(../static/img/slide/slide-1.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>SSV Payroll Manager</span></h2>
+              <p class="animate__animated animate__fadeInUp">In a nutshell, we manage a company's employee's financial
+                records. This would include details of the employee's salaries, incentives, bonuses, deductions, and net
+                pay. An employer must maintain and keep these records as dictated
+                by the law.</p>
+              <a href="#login" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Login</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(../static/img/slide/slide-2.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Developed Using</h2>
+              <p class="animate__animated animate__fadeInUp">HTML,CSS,Django Python and MySQL.</p>
+              <a href="#login" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(../static/img/slide/slide-3.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">What makes us special?</h2>
+              <p class="animate__animated animate__fadeInUp">Manage Your marketplace, share invoices with employees -
+                all from a single platform. Fast forward your business with our help!</p>
+              <a href="#login" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <div class="jumbotron" style="margin-top: 75px;text-align: center;" id="login">
+    <p class="lead">To continue either login as admin or employee</p>
+    <hr class="my-4">
+    <a class="btn btn-danger" href="{% url 'admin_login' %}" role="button">Admin</a>&nbsp;&nbsp;
+    <a class="btn btn-danger" href="{% url 'employee_login' %}" role="button">Employee</a>
+
+  </div>
+
+  {% endblock %}

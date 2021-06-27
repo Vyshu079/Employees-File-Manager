@@ -1,0 +1,192 @@
+{% extends 'payroll_manager/base.html' %}
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Services</h2>
+                <ol>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li>Services</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="icon-box">
+                        <i class="bi bi-briefcase"></i>
+                        <h4><a href="#">Organised and Safe</a></h4>
+                        <p>Digitalizing your data means that now you dont have to worry about misplacing it anywhere.
+                            Live your carefree life!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box">
+                        <i class="bi bi-card-checklist"></i>
+                        <h4><a href="#">Accessible to Staff</a></h4>
+                        <p>The software is "both-ways". It has a client side and an admin side.
+                            In other words, the staff can access their data alone and save you the time of having to
+                            update their personal details!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box">
+                        <i class="bi bi-bar-chart"></i>
+                        <h4><a href="#">Leave Management</a></h4>
+                        <p>Also acts as a mini Leave Management substitute! The staff and apply for leave and
+                            the admin can choose to accept or reject the leave and the employee will be notified with
+                            the leave status.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="icon-box">
+                        <i class="bi bi-binoculars"></i>
+                        <h4><a href="#">Chatbot</a></h4>
+                        <p>We have intergrated our software with a chatbot using <a
+                                href="https://cloud.google.com/dialogflow/docs">Dialogflow</a>
+                            which is a natural language understanding platform provided by Google that makes it easy to
+                            design and integrate a
+                            conversational user interface into your web application.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Services Section -->
+
+    <!-- ======= Technology Section ======= -->
+    <section id="features" class="features">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Technology</h2>
+                <p>Technology Stack</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="nav nav-tabs flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Django</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">MySQL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Hosting</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9 mt-4 mt-lg-0">
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="tab-1">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Frontend - HTML</h3>
+                                    <p class="fst-italic"><a href="https://www.w3schools.com/html/default.asp">Hyper
+                                            Text Markup Language</a> is the standard markup language for
+                                        creating Web pages.</p>
+                                    <p>We have used a wide variety of elements to make the website more user-friendly.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="http://www.webdevelopmenthelp.net/wp-content/uploads/2015/09/HTML55.png"
+                                        alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-2">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Styling - CSS</h3>
+                                    <p class="fst-italic">Cascading Style Sheets </p>
+                                    <p>We have used 3 types of <a
+                                            href="https://www.w3schools.com/css/default.asp">CSS</a>:
+                                    <ul>
+                                        <li>Inline</li>
+                                        <li>Embedded</li>
+                                        <li>External</li>
+                                    </ul>
+                                    We have also used open-source Bootstrap framework.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="https://www.theopensourcery.com/wp-content/uploads/2014/03/css3-markup.jpg"
+                                        alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-3">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Backbone - Django</h3>
+                                    <p class="fst-italic">We have used Django with Python for building our website.</p>
+                                    <p>Django is a high-level Python Web framework that encourages rapid development and
+                                        clean, pragmatic design. Built by experienced developers, it takes care of much
+                                        of the hassle of Web development, so you can focus on writing your app without
+                                        needing to reinvent the wheel. It’s free and open source.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="https://cdn.artandlogic.com/wp-content/uploads/django.jpeg" alt=""
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-4">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Database - MySQL</h3>
+                                    <p class="fst-italic">MySQL is an open-source relational database management system.
+                                    </p>
+                                    <p>RDBMS is a program used to maintain a relational database. RDBMS is the basis for
+                                        all modern database systems such as MySQL, Microsoft SQL Server, Oracle, and
+                                        Microsoft Access. RDBMS uses SQL queries to access the data in the database.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src=" https://download.logo.wine/logo/MySQL/MySQL-Logo.wine.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-5">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Hosting</h3>
+                                    <p class="fst-italic">We have hosted our website!!</p>
+                                    <p></p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="../static/img/features-5.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Features Section -->
+
+</main>
+<!-- End #main -->
+
+{% endblock %}

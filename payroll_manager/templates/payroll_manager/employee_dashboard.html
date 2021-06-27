@@ -1,0 +1,75 @@
+{% extends 'payroll_manager/base.html' %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div>{% if message.tags %} {% endif %} class="alert alert-success">{{ message }}</div>
+{% endfor %}
+{% endif %}
+<br><br>
+<ul class="list-group" style="margin: 30px auto;">
+  <li class="list-group-item active"
+    style="background-color: rgb(214, 207, 207);padding-top: 12px;padding-bottom: 12px;">
+    <span style="font-weight:bold;color:black;">Employee's Info:</span>
+  </li>
+  <li class="list-group-item"><span style="font-weight:bold">Employee Name:</span> {{ user_info.employee_name }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Department Name:</span>
+    {{user_info.department.department_name }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Company:</span> {{ user_info.company.company_name }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Date Of Join:</span> {{ user_info.employee_doj }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Grade:</span> {{ user_info.grade.grade_name }}</li>
+</ul>
+<ul class="list-group" style="margin: 30px auto;">
+  <li class="list-group-item active"
+    style="display: flex;justify-content: space-between;align-items: center;background-color: rgb(214, 207, 207);padding-top: 12px;padding-bottom: 12px;">
+    <span style="font-weight:bold;color:black;">Employee's Address Info:</span> <a class="btn active"
+      href="{% url 'changeAddress' emp_id=request.user %}" style="border: 1px solid white;background-color: red;"><span
+        class="iconify" data-icon="bx:bxs-edit" data-inline="false" style="color: white;" data-width="30"
+        data-height="30"></span></a>
+  </li>
+  <!--HEreeee-->
+  <li class="list-group-item"><span style="font-weight:bold">Building:</span> {{ user_info.address.building_details }}
+  </li>
+  <li class="list-group-item"><span style="font-weight:bold">Road:</span> {{user_info.address.road }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Landmark:</span> {{ user_info.address.landmark }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">City:</span> {{ user_info.address.city }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">State:</span> {{ user_info.address.state.state_name }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Country:</span> {{ user_info.address.country }}</li>
+</ul>
+<ul class="list-group" style="margin: 30px auto;">
+  <!--HEreeee-->
+  <li class="list-group-item active"
+    style="display: flex;justify-content: space-between;align-items: center;background-color: rgb(214, 207, 207);padding-top: 12px;padding-bottom: 12px;">
+    <span style="font-weight:bold;color:black;">Employee's Salary Info:</span>
+  </li>
+  <li class="list-group-item"><span style="font-weight:bold">Basic Amount:</span> {{ user_paygrade.basic_amt }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Allowance:</span> {{user_paygrade.da_amt }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Provident Fund:</span> {{ user_paygrade.pf_amt }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Health Funds:</span> {{ user_paygrade.medical_amt }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Gross Salary:</span> {{ user_pay.gross_salary }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Gross Deduction:</span> {{ user_pay.gross_dedn }}</li>
+  <li class="list-group-item"><span style="font-weight:bold">Net Salary:</span> {{ user_pay.net_salary }}</li>
+</ul>
+<ul class="list-group" style="margin: 30px auto;">
+  <li href="#" class="list-group-item list-group-item-action active" style="background-color: rgb(214, 207, 207);">
+    <div class="d-flex w-100 justify-content-between" style="align-items: center;">
+      <h5 class="mb-1" style="font-weight:bold;color:black;">Employee's Off days list</h5>
+      <a class="btn active" href="{% url 'leaveApply' emp_id=request.user %}"
+        style="border: 1px solid white;color:white;">Apply leave</a>
+    </div>
+  </li>
+  {% for leave in user_leave %}
+  <a href="#"
+    class="list-group-item list-group-item-action {% if leave.is_approved == 1 %} list-group-item-success {% elif leave.is_approved == 0 %} {% else %} list-group-item-danger {% endif %}">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">#{{leave.leave_id}}</h5>
+    </div>
+    <p class="mb-1">Leave Date: {{ leave.leave_date }}</p>
+    <p class="mb-1">Leave Type: {{ leave.leave_type }}</p>
+    <p class="mb-1">Financial Year: {{ leave.fin_year }}</p>
+    <p class="mb-1">Status: {%if leave.is_approved == 1 %} Approved {% elif leave.is_approved == 0 %} Not Approved
+      {% else %} Rejected {% endif %}</p>
+  </a>
+  {% endfor %}
+</ul>
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+{% endblock %}

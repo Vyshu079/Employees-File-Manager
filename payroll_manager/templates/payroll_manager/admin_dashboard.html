@@ -1,0 +1,54 @@
+{% extends 'payroll_manager/base.html' %}
+{% block content %}
+<br><br>
+<div class="list-group" style="margin: 30px auto;">
+  <div href="#" class="list-group-item list-group-item-action" style="background-color: rgb(214, 207, 207);">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1" style="display: flex;width: 100%;justify-content: space-between;align-items: center;"><span
+          style="font-weight:bold">Employee's
+          list </span><a class="btn btn-danger" href="{% url 'register' %}"
+          style="border: 1px solid white;color:white;"><span class="iconify" data-icon="bx:bx-add-to-queue"
+            data-inline="false" style="color: white;" data-width="30" data-height="30"></span></a>
+      </h5>
+    </div>
+  </div>
+  {% for employee in allEmp %}
+  <!-- <a href="{% url 'admin_employee_dashboard' emp_id=employee.employee.user_id %}"
+    class="list-group-item list-group-item-action"> -->
+  <div class="d-flex w-100 justify-content-between">
+    <p style="padding-left:35%;">{{ employee.employee_name }} - {{ employee.company.company_name }}</p>
+    <a href="{% url 'admin_employee_dashboard' emp_id=employee.employee.user_id %}" style="padding-right: 250px;"><span
+        class="iconify" data-icon="bx:bxs-user-detail" data-inline="false" style="color: rgb(99, 92, 92);"
+        data-width="30" data-height="30"></span></a>
+  </div>
+  <!-- </a> -->
+  {% endfor %}
+</div>
+<ul class="list-group" style="margin: 30px auto;">
+  <li href="#" class="list-group-item list-group-item-action" style="background-color: rgb(214, 207, 207);">
+    <div class="d-flex w-100 justify-content-between" style="align-items: center;">
+      <h5 class="mb-1">Employee's Off days list</h5>
+    </div>
+  </li>
+  {% for leave in LeaveR %}
+  <li class="list-group-item list-group-item-action">
+    <div style="display: flex;position: absolute; top:20px; right: 20px;">
+      <a class="btn btn-success" href="{% url 'approval' leave_id=leave.leave_id app_id=1 %}"
+        style="margin:0 10px;"><span class="iconify" data-icon="bx:bxs-user-check" data-inline="false"
+          style="color: white;" data-width="30" data-height="30"></span></a>
+      <a class="btn btn-danger" href="{% url 'approval' leave_id=leave.leave_id app_id=2 %}"><span class="iconify"
+          data-icon="bx:bx-user-x" data-inline="false" style="color: white;" data-width="30"
+          data-height="30"></span></a>
+    </div>
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">#{{leave.leave_id}}</h5>
+    </div>
+    <p class="mb-1">Employee Id: {{ leave.employee.employee.user_id }}</p>
+    <p class="mb-1">Leave Date: {{ leave.leave_date }}</p>
+    <p class="mb-1">Leave Type: {{ leave.leave_type }}</p>
+    <p class="mb-1">Financial Year: {{ leave.fin_year }}</p>
+  </li>
+  {% endfor %}
+</ul>
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+{% endblock %}

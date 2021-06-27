@@ -1,0 +1,62 @@
+{% extends 'payroll_manager/base.html' %}
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Team</h2>
+                <ol>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li>Team</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team ">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img
+                                src="https://cdn.discordapp.com/attachments/837322738364055625/858005639628062790/Vyshali-Bday-03.jpeg"
+                                class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>S Vyshali</h4>
+                            <span>BE-Computer Science</span>
+                            <p>Fascination for Artificial Intelligence</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img
+                                src="https://cdn.discordapp.com/attachments/837322738364055625/858001358111506452/me.jpg"
+                                class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>Swetha Saseendran</h4>
+                            <span>BE-Computer Science</span>
+                            <p>Data Science Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Team Section -->
+
+</main>
+<!-- End #main -->
+
+
+{% endblock %}
