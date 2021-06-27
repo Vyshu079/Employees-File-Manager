@@ -4,11 +4,11 @@ A Employee file management site to take care of employee's salaries, deductions,
 * Create a virtual Environment
 * Install Django using:
   * ```
-  pip install django
+    pip install django
   ```
 * Install mysqlclient using:
   * ```
-    pip install mysqlclinet
+     pip install mysqlclinet
     ```
 * clone this project.
 * Go to settings.py by payroll_management_sys -> settings.py
