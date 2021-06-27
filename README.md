@@ -1,13 +1,17 @@
 # payroll_management_system
-A company payroll management system made with Django and MySQL which lets the admin set income and credentials for the employee and provides leave request and approval functionality.
+A Employee file management site to take care of employee's salaries, deductions, bonuses and leave management.
 ## Installation Steps:
-* Install Django
+* Create a virtual Environment
+* Install Django using:
+  * ```
+  pip install django
+  ```
 * Install mysqlclient using:
   * ```
     pip install mysqlclinet
     ```
 * clone this project.
-* Go to [settings.py](https://github.com/chirayurathi/payroll_management_system/blob/main/payroll_management_sys/settings.py) payroll_management_sys -> settings.py
+* Go to settings.py by payroll_management_sys -> settings.py
   Change the database user credentials, this block of code:
   ```
   DATABASES = {
@@ -26,9 +30,9 @@ A company payroll management system made with Django and MySQL which lets the ad
   ```
   python manage.py makemigrations
   python manage.py migrate
-  python populate_user.py #To make dummy employee and admin account
+  python populate_user.py 
   ```
-* run [populate_table](https://github.com/chirayurathi/payroll_management_system/blob/main/populate_table.sql) SQL script in mysql
+* run populate_table.sql -> SQL script in mysql
 * Finally on cmd run,
 ```
 python manage.py runserver
